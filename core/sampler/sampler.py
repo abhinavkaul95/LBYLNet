@@ -50,7 +50,8 @@ class Referring(Dataset):
         while True:
             # reading images
             image_path = self._db.image_path(db_ind)
-            print(image_path)
+            image_id = image_path.split("/")[-1]
+            #print(image_path)
             image = cv2.imread(image_path)
                 # image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
             # else:
@@ -110,12 +111,12 @@ class Referring(Dataset):
                 word_mask = features[0].input_mask
                 if self.test:
                     word_id = torch.tensor(word_id, dtype=torch.long)
-                    return image, word_id, original_shape
+                    return image, image_id, word_id, original_shape
                 else:
-                    return image, bbox, word_id, word_mask
+                    return image, image_id, bbox, word_id, word_mask
             else: # for lstm
                 phrase = self._tokenize_phrase(phrase)
                 if self.test:
-                    return image, phrase, original_shape
+                    return image, image_id, phrase, original_shape
                 else:
-                    return image, phrase, bbox
+                    return image, image_id, phrase, bbox

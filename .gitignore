@@ -11,3 +11,4 @@ results/**/visulize/
 **/__pycache__/**
 env
 logs/
+feat_maps

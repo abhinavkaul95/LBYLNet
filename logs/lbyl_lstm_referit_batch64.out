@@ -1189,3 +1189,44 @@
 2021-05-08 19:58:30,359 - INFO - loading vocabulary file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt from cache at /home/user/.pytorch_pretrained_bert/26bc1ad6c0ac742e9b52263248f6d0f00068293b33709fae12320c0e35ccfbbb.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
 2021-05-08 19:58:33,995 - INFO - ground model total parameters: 77.19 M
 2021-05-08 19:58:33,997 - INFO - training start...
+2021-05-09 12:31:08,695 - INFO - ==================================================================
+2021-05-09 12:31:08,695 - INFO - train start from here ... 
+
+2021-05-09 12:31:09,674 - INFO - Process 0: loading all datasets...
+2021-05-09 12:31:09,674 - INFO - Process 0: using 8 workers
+2021-05-09 12:31:10,463 - INFO - system config...
+2021-05-09 12:31:10,464 - INFO - {'dataset': 'referit', 'language': 'lstm', 'model': 'LBYLNet', 'anchor_based': True, 'context': 'LandmarkP4', 'ctx_dim': 128, 'visu_weight': 'yolov3.weights', 'lr_scheduler': 'cosin_lr', 'warm_up': True, 'warm_up_epoch': 5, 'warm_up_from_lr': 1e-06, 'learning_rate': 0.0001, 'decay_rate': 10, 'milestone': [30, 80], 'gamma': 0.1, 'opt_algo': 'adam', 'display': 5, 'nb_epoch': 100, 'print_freq': 100, 'snapshot': 5, 'stepsize': 80, 'val_iter': 1, 'batch_size': 64, 'snapshot_name': 'lbyl_lstm_referit_batch64', 'prefetch_size': 100, 'pretrain': None, 'chunk_sizes': [32], 'corpus_dir': './data/refer/', 'data_dir': './data', 'cache_dir': './cache', 'config_dir': './config', 'result_dir': './results', 'train_split': 'train', 'val_split': 'val', 'test_split': 'test', 'data_rng': RandomState(MT19937) at 0x7F9B16E50EB8, 'nnet_rng': RandomState(MT19937) at 0x7F9B03C70048}
+2021-05-09 12:31:10,464 - INFO - db config...
+2021-05-09 12:31:10,464 - INFO - {'data_aug': True, 'random_flip': True, 'random_affine': True, 'random_color': True, 'random_lighting': True, 'input_size': [256, 256], 'output_sizes': [32, 32], 'anchors': [(373.0, 326.0), (156.0, 198.0), (116.0, 90.0), (59.0, 119.0), (62.0, 45.0), (30.0, 61.0), (33.0, 23.0), (16.0, 30.0), (10.0, 13.0)], 'vocab_size': 0, 'word_embedding_size': 512, 'word_vec_size': 512, 'hidden_size': 512, 'bidirectional': True, 'input_dropout_p': 0.5, 'dropout_p': 0.2, 'n_layers': 1, 'max_query_len': 128, 'variable_length': True, 'joint_embedding_size': 256, 'joint_out_dim': 256, 'joint_embedding_dropout': 0.1, 'joint_mlp_layers': 2, 'corpus_path': '/media/disk/user/abhinav/LBYLNet/core/../data/refer/data/referit/corpus.pth'}
+2021-05-09 12:31:10,464 - INFO - len of training db: 54127
+2021-05-09 12:31:10,464 - INFO - len of validate db: 5842
+2021-05-09 12:31:10,464 - INFO - distributed: True
+2021-05-09 12:31:14,447 - INFO - loading vocabulary file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt from cache at /home/user/.pytorch_pretrained_bert/26bc1ad6c0ac742e9b52263248f6d0f00068293b33709fae12320c0e35ccfbbb.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
+2021-05-09 12:31:15,623 - INFO - loading vocabulary file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt from cache at /home/user/.pytorch_pretrained_bert/26bc1ad6c0ac742e9b52263248f6d0f00068293b33709fae12320c0e35ccfbbb.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
+2021-05-09 12:31:19,079 - INFO - ground model total parameters: 77.19 M
+2021-05-09 12:31:19,081 - INFO - training start...
+2021-05-09 12:37:56,004 - INFO - ==================================================================
+2021-05-09 12:37:56,004 - INFO - train start from here ... 
+
+2021-05-09 12:37:57,129 - INFO - Process 0: loading all datasets...
+2021-05-09 12:37:57,130 - INFO - Process 0: using 8 workers
+2021-05-09 12:37:57,906 - INFO - system config...
+2021-05-09 12:37:57,906 - INFO - {'dataset': 'referit', 'language': 'lstm', 'model': 'LBYLNet', 'anchor_based': True, 'context': 'LandmarkP4', 'ctx_dim': 128, 'visu_weight': 'yolov3.weights', 'lr_scheduler': 'cosin_lr', 'warm_up': True, 'warm_up_epoch': 5, 'warm_up_from_lr': 1e-06, 'learning_rate': 0.0001, 'decay_rate': 10, 'milestone': [30, 80], 'gamma': 0.1, 'opt_algo': 'adam', 'display': 5, 'nb_epoch': 100, 'print_freq': 100, 'snapshot': 5, 'stepsize': 80, 'val_iter': 1, 'batch_size': 16, 'snapshot_name': 'lbyl_lstm_referit_batch64', 'prefetch_size': 100, 'pretrain': None, 'chunk_sizes': [32], 'corpus_dir': './data/refer/', 'data_dir': './data', 'cache_dir': './cache', 'config_dir': './config', 'result_dir': './results', 'train_split': 'train', 'val_split': 'val', 'test_split': 'test', 'data_rng': RandomState(MT19937) at 0x7FBF982F3EB8, 'nnet_rng': RandomState(MT19937) at 0x7FBF96E97048}
+2021-05-09 12:37:57,907 - INFO - db config...
+2021-05-09 12:37:57,907 - INFO - {'data_aug': True, 'random_flip': True, 'random_affine': True, 'random_color': True, 'random_lighting': True, 'input_size': [256, 256], 'output_sizes': [32, 32], 'anchors': [(373.0, 326.0), (156.0, 198.0), (116.0, 90.0), (59.0, 119.0), (62.0, 45.0), (30.0, 61.0), (33.0, 23.0), (16.0, 30.0), (10.0, 13.0)], 'vocab_size': 0, 'word_embedding_size': 512, 'word_vec_size': 512, 'hidden_size': 512, 'bidirectional': True, 'input_dropout_p': 0.5, 'dropout_p': 0.2, 'n_layers': 1, 'max_query_len': 128, 'variable_length': True, 'joint_embedding_size': 256, 'joint_out_dim': 256, 'joint_embedding_dropout': 0.1, 'joint_mlp_layers': 2, 'corpus_path': '/media/disk/user/abhinav/LBYLNet/core/../data/refer/data/referit/corpus.pth'}
+2021-05-09 12:37:57,907 - INFO - len of training db: 54127
+2021-05-09 12:37:57,907 - INFO - len of validate db: 5842
+2021-05-09 12:37:57,907 - INFO - distributed: True
+2021-05-09 12:38:01,836 - INFO - loading vocabulary file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt from cache at /home/user/.pytorch_pretrained_bert/26bc1ad6c0ac742e9b52263248f6d0f00068293b33709fae12320c0e35ccfbbb.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
+2021-05-09 12:38:02,828 - INFO - loading vocabulary file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt from cache at /home/user/.pytorch_pretrained_bert/26bc1ad6c0ac742e9b52263248f6d0f00068293b33709fae12320c0e35ccfbbb.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
+2021-05-09 12:38:06,285 - INFO - ground model total parameters: 77.19 M
+2021-05-09 12:38:06,286 - INFO - training start...
+2021-05-09 12:38:52,211 - INFO - Process 0	epoch[0][100/3383]	time 0.270 (0.459)	data 0.000 (0.174)	loss 10.8649 (10.7318)	rank loss 8.1802 (8.2107)	offs loss 2.6847 (2.521076)	lr 0.00000100
+2021-05-09 12:39:18,477 - INFO - Process 0	epoch[0][200/3383]	time 0.253 (0.361)	data 0.000 (0.087)	loss 9.7357 (10.4772)	rank loss 7.9038 (8.1224)	offs loss 1.8319 (2.354886)	lr 0.00000100
+2021-05-09 12:39:44,617 - INFO - Process 0	epoch[0][300/3383]	time 0.255 (0.328)	data 0.000 (0.058)	loss 9.8568 (10.3353)	rank loss 7.6851 (8.0420)	offs loss 2.1717 (2.293272)	lr 0.00000100
+2021-05-09 12:40:11,929 - INFO - Process 0	epoch[0][400/3383]	time 0.250 (0.314)	data 0.000 (0.044)	loss 9.6045 (10.2432)	rank loss 7.7913 (7.9649)	offs loss 1.8131 (2.278321)	lr 0.00000100
+2021-05-09 12:40:38,270 - INFO - Process 0	epoch[0][500/3383]	time 0.289 (0.304)	data 0.000 (0.035)	loss 9.3483 (10.1579)	rank loss 7.3624 (7.8950)	offs loss 1.9858 (2.262816)	lr 0.00000100
+2021-05-09 12:41:05,307 - INFO - Process 0	epoch[0][600/3383]	time 0.304 (0.298)	data 0.001 (0.029)	loss 9.3526 (10.0630)	rank loss 7.2913 (7.8195)	offs loss 2.0613 (2.243558)	lr 0.00000100
+2021-05-09 12:41:32,481 - INFO - Process 0	epoch[0][700/3383]	time 0.290 (0.295)	data 0.000 (0.025)	loss 9.7001 (9.9727)	rank loss 7.5615 (7.7498)	offs loss 2.1386 (2.222973)	lr 0.00000100
+2021-05-09 12:41:59,343 - INFO - Process 0	epoch[0][800/3383]	time 0.254 (0.291)	data 0.000 (0.022)	loss 8.9941 (9.8979)	rank loss 6.9966 (7.6903)	offs loss 1.9974 (2.207684)	lr 0.00000100
+2021-05-09 12:42:26,593 - INFO - Process 0	epoch[0][900/3383]	time 0.278 (0.289)	data 0.000 (0.019)	loss 9.1517 (9.8341)	rank loss 7.0427 (7.6330)	offs loss 2.1089 (2.201078)	lr 0.00000100

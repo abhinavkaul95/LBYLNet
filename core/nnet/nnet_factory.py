@@ -146,12 +146,12 @@ class NetworkFactory(object):
             off_loss = off_loss.mean()
             return loss, focal_loss, off_loss
 
-    def test(self, images, phrases, **kwargs):
+    def test(self, images, phrases, k_ind, image_ids, **kwargs):
         with torch.no_grad():
             images = images.contiguous()
             images = self._t_cuda(images)
             phrases = self._t_cuda(phrases)
-            return self.model(images, phrases, test=True)
+            return self.model(images, phrases, image_ids, k_ind, test=True)
             
 
     def set_lr(self, lr):

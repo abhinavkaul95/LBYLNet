@@ -96,12 +96,12 @@ def test(db, system_config, model, args):
         expressions = [db.phrase(ind) for ind in db_inds]
         gt_bboxes   = [db.annotation_box(ind) for ind in db_inds]
         batch       = [dataset[ind] for ind in db_inds]
-        images, phrases, original_shapes = tuple(zip(*tuple(batch)))
+        images, image_ids, phrases, original_shapes = tuple(zip(*tuple(batch)))
         images = np.stack(images)
         images = torch.from_numpy(images)
         phrases = torch.stack(phrases)
-
-        out = nnet.test(images, phrases)
+        
+        out = nnet.test(images, phrases, k_ind//batch_size, image_ids)
         bboxes = _decode_anchorbased(out)
         for ind, bbox in enumerate(bboxes):
             # revert to original scales

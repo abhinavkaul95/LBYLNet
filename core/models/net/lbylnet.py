@@ -4,6 +4,7 @@ import torch.nn.functional as F
 import numpy as np
 import pdb
 import re
+from matplotlib import pyplot as plt
 from ...paths import get_file_path
 # from ..context.module import convolution, residual
 from ..lang_encoder.RNNencoder import BertEncoder, RNNEncoder
@@ -65,7 +66,8 @@ class LBYLNet(nn.Module):
         self.loss = Loss(off_weight=5., anchors=self.anchors, input_size=self.input_size[0])
 
 
-    def forward(self, images, phrases, masks=None, test=False):
+    def forward(self, images, phrases, image_ids, k_ind, masks=None, test=False):
+#        print(image_ids)
         # visual module
         device = images.device
         batch_size = images.shape[0]
@@ -98,7 +100,17 @@ class LBYLNet(nn.Module):
         lower_feat = self.upsample(joint_feats[0])
         higher_feat = self.maxpool(joint_feats[-1])
         inter_feat = self.refine((joint_feats[1] + lower_feat + higher_feat) / 3.)
-        
+#        print(images.shape, inter_feat.shape)
+        for i, (fmap_batch, image_id) in enumerate(zip(inter_feat, image_ids)):
+            ix = 1
+            for _ in range(3):
+                for _ in range(3):
+                    ax = plt.subplot(3, 3, ix)
+                    ax.set_xticks([])
+                    ax.iset_yticks([])
+                    plt.imshow(fmap_batch[ix-1,:, :].cpu(), cmap='gray')
+                    ix += 1
+            plt.savefig("feat_maps/"+image_id)
         # any context-aware module you want.
         if self.context_block:
             inter_feat = self.context_block(inter_feat)
