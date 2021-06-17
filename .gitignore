@@ -4,7 +4,10 @@ cache
 .vscode
 ext/yolov3.weights
 ext/lib
+ext/landmarkconv
 /*.out 
 results/**/visulize/
 **/*.pyc
 **/__pycache__/**
+env
+logs/

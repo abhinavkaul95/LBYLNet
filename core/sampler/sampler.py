@@ -50,6 +50,7 @@ class Referring(Dataset):
         while True:
             # reading images
             image_path = self._db.image_path(db_ind)
+            print(image_path)
             image = cv2.imread(image_path)
                 # image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
             # else:
